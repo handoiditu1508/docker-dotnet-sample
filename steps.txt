@@ -1,2 +1,13 @@
 - build image & start container
 docker compose up --build
+
+- list out all containers to get database container id in order to insert data to db
+docker container ls
+
+- insert record into database
+docker exec 39fdcf0aff7b psql -d example -U postgres -c "INSERT INTO \"Students\" (\"ID\", \"LastName\", \"FirstMidName\", \"EnrollmentDate\") VALUES (DEFAULT, 'Whale', 'Moby', '2013-03-20');"
+
+- verify data is persist
+ctrl+c
+docker compose rm
+docker compose up --build
