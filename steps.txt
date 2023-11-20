@@ -11,3 +11,10 @@ docker exec 39fdcf0aff7b psql -d example -U postgres -c "INSERT INTO \"Students\
 ctrl+c
 docker compose rm
 docker compose up --build
+
+- start docker watch
+docker compose watch
+
+- update index.cshtml file
+- go to url
+http://localhost:8080
