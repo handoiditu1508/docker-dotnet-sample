@@ -18,3 +18,9 @@ docker compose watch
 - update index.cshtml file
 - go to url
 http://localhost:8080
+
+- run test inside container
+docker compose run --build --rm server dotnet test /source/tests
+
+- run test when building
+docker build -t dotnet-docker-image-test --progress=plain --no-cache --target build .
